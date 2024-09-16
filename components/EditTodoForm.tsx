@@ -4,7 +4,7 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Input } from "@/components/ui/input";
 import { todoFormValues, todoFormSchema } from "@/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Pen, Plus } from "lucide-react";
+import { Pen} from "lucide-react";
 import { useForm } from "react-hook-form";
 import { Button } from "./ui/button";
 import { Checkbox } from "./ui/checkbox";
@@ -22,8 +22,6 @@ const EditTodoForm = ({ todo }: { todo: ITodo }) => {
     body: todo.body as string,
     completed: todo.completed,
   };
-
-  // const todos = await getTodoListAction();
   const form = useForm<todoFormValues>({
     resolver: zodResolver(todoFormSchema),
     defaultValues,
